@@ -13,7 +13,7 @@ import com.google.firebase.database.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etNombre, etApellido, etCorreo, etFecha, etId;
+    EditText etNombre, etApellido, etCorreo, etFecha, etId, etFoto;
     Button btnGuardar, btnActualizar, btnEliminar, btnVer;
 
     DatabaseReference databaseReference;
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         etCorreo = findViewById(R.id.etCorreo);
         etFecha = findViewById(R.id.etFecha);
         etId = findViewById(R.id.etId);
+        etFoto = findViewById(R.id.etFoto);
+
 
         btnGuardar = findViewById(R.id.btnGuardar);
         btnActualizar = findViewById(R.id.btnActualizar);
@@ -43,16 +45,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void guardarPersona() {
+        String nombre = etNombre.getText().toString().trim();
+        String apellido = etApellido.getText().toString().trim();
+        String correo = etCorreo.getText().toString().trim();
+        String fecha = etFecha.getText().toString().trim();
+        String fotoUrl = etFoto.getText().toString().trim();
+
+        if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || fecha.isEmpty()) {
+            Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String id = databaseReference.push().getKey();
-        Personas persona = new Personas(id,
-                etNombre.getText().toString(),
-                etApellido.getText().toString(),
-                etCorreo.getText().toString(),
-                etFecha.getText().toString());
+
+        Personas persona = new Personas(id, nombre, apellido, correo, fecha, fotoUrl);
 
         databaseReference.child(id).setValue(persona)
-                .addOnSuccessListener(aVoid ->
-                        Toast.makeText(this, "Persona guardada", Toast.LENGTH_SHORT).show());
+                .addOnSuccessListener(aVoid -> Toast.makeText(this, "Persona guardada", Toast.LENGTH_SHORT).show())
+                .addOnFailureListener(e -> Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show());
     }
 
     private void actualizarPersona() {

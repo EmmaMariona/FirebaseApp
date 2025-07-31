@@ -34,10 +34,17 @@
             android:hint="Fecha de nacimiento" />
 
         <EditText
+            android:id="@+id/etFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL de la foto (opcional)" />
+
+        <EditText
             android:id="@+id/etId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID (solo para actualizar/eliminar)" />
+            android:hint="ID (para actualizar/eliminar)"
+            android:enabled="false" />
 
         <Button
             android:id="@+id/btnGuardar"
@@ -61,8 +68,7 @@
             android:id="@+id/btnVer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver lista de personas"
-            android:layout_marginTop="8dp" />
+            android:text="Ver lista de personas" />
     </LinearLayout>
 </ScrollView>
 

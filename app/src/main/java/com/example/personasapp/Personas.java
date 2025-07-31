@@ -6,18 +6,19 @@ public class Personas {
     private String apellidos;
     private String correo;
     private String fechanac;
+    private String foto;
 
-    public Personas() {} // Obligatorio para Firebase
+    public Personas() {} // Firebase necesita constructor vacío
 
-    public Personas(String id, String nombres, String apellidos, String correo, String fechanac) {
+    public Personas(String id, String nombres, String apellidos, String correo, String fechanac, String foto) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
         this.fechanac = fechanac;
+        this.foto = foto;
     }
 
-    // Getters y setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
@@ -32,5 +33,7 @@ public class Personas {
 
     public String getFechanac() { return fechanac; }
     public void setFechanac(String fechanac) { this.fechanac = fechanac; }
-}
 
+    public String getFoto() { return foto; }
+    public void setFoto(String foto) { this.foto = foto; }
+}

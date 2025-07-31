@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="16dp">
 
         <EditText
             android:id="@+id/etNombre"
@@ -33,18 +33,32 @@
             android:layout_height="wrap_content"
             android:hint="Fecha de nacimiento" />
 
+        <EditText
+            android:id="@+id/etFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL de la foto" />
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_profile"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
         <Button
             android:id="@+id/btnActualizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Actualizar"
-            android:layout_marginTop="16dp" />
+            android:text="Actualizar" />
 
         <Button
             android:id="@+id/btnEliminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Eliminar"
-            android:layout_marginTop="8dp" />
+            android:text="Eliminar" />
     </LinearLayout>
 </ScrollView>
