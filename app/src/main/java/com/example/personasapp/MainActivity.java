@@ -14,7 +14,7 @@ import com.google.firebase.database.*;
 public class MainActivity extends AppCompatActivity {
 
     EditText etNombre, etApellido, etCorreo, etFecha, etId, etFoto;
-    Button btnGuardar, btnActualizar, btnEliminar, btnVer;
+    Button btnGuardar, btnVer;
 
     DatabaseReference databaseReference;
 
@@ -32,15 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnGuardar = findViewById(R.id.btnGuardar);
-        btnActualizar = findViewById(R.id.btnActualizar);
-        btnEliminar = findViewById(R.id.btnEliminar);
         btnVer = findViewById(R.id.btnVer);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Personas");
 
         btnGuardar.setOnClickListener(view -> guardarPersona());
-        btnActualizar.setOnClickListener(view -> actualizarPersona());
-        btnEliminar.setOnClickListener(view -> eliminarPersona());
         btnVer.setOnClickListener(view -> verPersonas());
     }
 

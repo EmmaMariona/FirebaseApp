@@ -52,17 +52,6 @@
             android:layout_height="wrap_content"
             android:text="Guardar" />
 
-        <Button
-            android:id="@+id/btnActualizar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Actualizar" />
-
-        <Button
-            android:id="@+id/btnEliminar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Eliminar" />
 
         <Button
             android:id="@+id/btnVer"
